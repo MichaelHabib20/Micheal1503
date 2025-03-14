@@ -1,0 +1,12 @@
+<nav class="navbar">
+  <ul class="nav-list d-flex justify-content-start align-items-center">
+    <li *ngFor="let item of navbarElements" class="nav-item">
+      <a [routerLink]="item.path" 
+         routerLinkActive="active"
+         class="nav-link">
+        {{item.label}}
+      </a>
+    </li>
+  </ul>
+</nav>
+

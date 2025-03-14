@@ -1,0 +1,30 @@
+@import 'src/styles.scss';
+  .navbar {
+    // padding: 1rem;
+  }
+  
+  .nav-list {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-link {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: color 0.2s;
+    font-size: 15px;
+  }
+
+  .nav-link:hover {
+    color: $secondary-color;
+    font-size: 14px;
+  }
+
+  .nav-link.active {
+    color: $secondary-color;
+    font-size: 14px;
+  }
