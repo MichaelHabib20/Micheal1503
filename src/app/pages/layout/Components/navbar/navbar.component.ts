@@ -9,9 +9,8 @@ import { NavbarElement } from 'src/app/pages/shared/Interfaces/NavbarElement';
 export class NavbarComponent {
   navbarElements: NavbarElement[] = [
     { label: 'All Movies', path: '/' },
-    { label: 'For Kids', path: '/about' },
-    
-    { label: 'Select Branch', path: '/contact' }
+    { label: 'For Kids', path: '/kids' },
+    { label: 'Select Branch', path: '/cinemas' }
   ];  
 }
 

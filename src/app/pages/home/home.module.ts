@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './Components/home/home.component';
 import { RouterModule, Routes } from '@angular/router';
 import { CategoriesComponent } from './Components/categories/categories.component';
-
+import { NavbarComponent } from '../layout/Components/navbar/navbar.component';
 const routes: Routes = [
   { path: '', component: HomeComponent }
 ];
@@ -11,7 +11,8 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     HomeComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    NavbarComponent
   ],
   imports: [
     CommonModule,

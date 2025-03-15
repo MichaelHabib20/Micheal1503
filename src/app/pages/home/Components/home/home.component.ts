@@ -14,7 +14,6 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.dataContextService.movies$.subscribe(value => {
       this.movies = JSON.parse(value);
-      console.log(this.movies);
     });
   }
 }

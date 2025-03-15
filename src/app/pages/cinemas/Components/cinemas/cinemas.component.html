@@ -1,0 +1,52 @@
+<div class="cinemas-container">
+    <div class="header">
+        <button class="back-button" (click)="goBack()">
+            <i class="fas fa-chevron-left"></i>
+            Select Branch
+        </button>
+        <div class="search-container">
+            <i class="fas fa-search search-icon"></i>
+            <input 
+                type="text" 
+                [(ngModel)]="searchTerm" 
+                (ngModelChange)="onSearchChange($event)"
+                placeholder="Search Malls or Branch"
+                class="search-input"
+            >
+        </div>
+    </div>
+
+    <div class="cinemas-list">
+        <div class="cinema-card" *ngFor="let cinema of filteredCinemas">
+            <img [src]="cinema.CinemaImage" [alt]="cinema.CinemaName" class="cinema-image">
+            <div class="cinema-details">
+                <div class="cinema-header">
+                    <h3 class="cinema-name">{{ cinema.CinemaName | slice:0:30 }}{{ cinema.CinemaName.length > 30 ? '...' : '' }}</h3>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <span class="text-white" >{{ cinema.CinemaRating }}</span>
+                    </div>
+                </div>
+                <div class="cinema-info">
+                    <div class="price">
+                        <i class="fas fa-ticket-alt"></i>
+                        <span>PHP {{ cinema.TicketsAvailable }}</span>
+                    </div>
+                    <div class="halls">
+                        <i class="fas fa-film"></i>
+                        <span>{{ cinema.CinemaHalls }} Cinemas</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <ng-container *ngIf="filteredCinemas.length === 0">
+        <div class="no-results">
+            <div class="no-results-content">
+                <i class="fas fa-theater-masks"></i>
+                <p>No cinemas found near you.</p>
+            </div>
+        </div>
+    </ng-container>
+</div>

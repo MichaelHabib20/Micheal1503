@@ -1,0 +1,43 @@
+<div class="movie-details-container" *ngIf="movie">
+  <!-- Header with back button and movie image -->
+  <div class="movie-header">
+    <button class="back-button" routerLink="/">
+      <i class="fas fa-arrow-left"></i>
+    </button>
+    <div class="movie-image">
+      <img [src]="movie.FilmImage" [alt]="movie.FilmName">
+      <div class="play-button">
+        <i class="fas fa-play"></i>
+      </div>
+      <div class="overlay-content">
+        <!-- Get Tickets Button -->
+        <button class="get-tickets-btn" [class.disabled]="!movie.HasTicketsAvail" (click)="navigateToCinemas()">
+          Get Tickets
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Movie Info -->
+  <div class="movie-info">
+    <!-- Tags and Duration -->
+    <div class="movie-meta">
+      <div class="tags">
+        <span class="tag" *ngFor="let tag of movie.Tags">{{tag}}</span>
+      </div>
+      <span class="duration"> <i class="fa-regular fa-clock"></i> {{movie.FilmDuration}}</span>
+    </div>
+
+    <!-- Title -->
+    <h1 class="movie-title">{{movie.FilmName}}</h1>
+
+    <!-- Description -->
+    <div class="description-container">
+      <p class="movie-description">{{truncatedDescription}}</p>
+      <button *ngIf="shouldShowToggle" class="toggle-description" (click)="toggleDescription()">
+        {{ showFullDescription ? 'Less' : 'More' }}
+      </button>
+    </div>
+
+  </div>
+</div>
